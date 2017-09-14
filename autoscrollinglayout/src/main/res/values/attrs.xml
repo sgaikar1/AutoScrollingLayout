@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AutoScrollingLayout">
+        <attr name="img_src" format="integer" />
+        <attr name="scroll_speed" format="float" />
+        <attr name="tint_alpha" format="float" />
+        <attr name="tint_color" format="color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.sgaikar1.autoscrollinglayout.AutoScrollingLayout
+        android:id="@+id/scrolling_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:img_src="@drawable/longimage1"
+        app:scroll_speed="500"
+        app:tint_alpha="0.9"
+        app:tint_color="#444777">
+
+    </com.sgaikar1.autoscrollinglayout.AutoScrollingLayout>
+</LinearLayout>
