@@ -14,5 +14,12 @@
         app:tint_alpha="0.9"
         app:tint_color="#444777">
 
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/android_oreo"
+            />
+
     </com.sgaikar1.autoscrollinglayout.AutoScrollingLayout>
 </LinearLayout>
