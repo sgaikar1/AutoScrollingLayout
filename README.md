@@ -1,4 +1,4 @@
-# DummyScrollingBG
+# AutoScrollingLayout
 
 
 The goal of this library is to help you in your development of User Interface.
