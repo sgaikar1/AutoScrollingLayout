@@ -6,7 +6,7 @@ This library will give you scrolling background effect as shown in the below ima
 
 ##Preview
 
-![gif](https://github.com/sgaikar1/ValidationUtilsLibrary/blob/master/screen/ezgif.com-resize%20(1).gif)
+![gif](https://github.com/sgaikar1/AutoScrollingLayout/blob/master/screen/screen1.gif)
 
 
 
@@ -35,7 +35,7 @@ dependencies {
 * [Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ```
-Copyright 2016 Santosh Gaikar....
+Copyright 2017 Santosh Gaikar....
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
