@@ -2,7 +2,9 @@ package com.sgaikar1.autoscrollinglayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +28,7 @@ public class AutoScrollingLayout extends FrameLayout implements OnPositionCalled
     private static final int DEFAULT_TINT_COLOR = Color.TRANSPARENT;
     private static final float DEFAULT_SPEED = 1600f;
     private static final float DEFAULT_ALPHA = 0.9f;
+    private static AutoScrollingLayout autoScrollingLayout;
     private float mAlpha;
     private float mSpeed;
     private Drawable mBackgroundImage;
@@ -33,6 +36,13 @@ public class AutoScrollingLayout extends FrameLayout implements OnPositionCalled
     private Context mContext;
     private RecyclerView recyclerView;
     private FrameLayout emptyView;
+
+    public static synchronized AutoScrollingLayout getInstance(Context context){
+        if(autoScrollingLayout == null){
+             autoScrollingLayout = new AutoScrollingLayout(context.getApplicationContext());
+        }
+        return autoScrollingLayout;
+    }
 
     public AutoScrollingLayout(Context context) {
         super(context);
@@ -75,7 +85,7 @@ public class AutoScrollingLayout extends FrameLayout implements OnPositionCalled
             emptyView.setAlpha(mAlpha);
             ArrayList<Drawable> imgList = new ArrayList<>();
 
-            if(mBackgroundImage!=null) {
+            if(mBackgroundImage==null) {
                 mBackgroundImage = ContextCompat.getDrawable(mContext,R.drawable.longimage);
             }
                 for (int i = 0; i < 1000; i++) {
@@ -112,16 +122,42 @@ public class AutoScrollingLayout extends FrameLayout implements OnPositionCalled
             recyclerView.smoothScrollToPosition(position + 1);
         }
     }
+
+    public AutoScrollingLayout setBackgroundSrc(Bitmap bitmap){
+        mBackgroundImage = new BitmapDrawable(getResources(),bitmap);
+        return autoScrollingLayout;
+    }
+
+    public AutoScrollingLayout setBackgroundSrc(Drawable drawable){
+        mBackgroundImage = drawable;
+
+        return autoScrollingLayout;
+    }
+
+    public AutoScrollingLayout setTintColor(int color){
+        mTintColor = color;
+        emptyView.setBackgroundColor(mTintColor);
+        return autoScrollingLayout;
+    }
+
+    public AutoScrollingLayout setSpeed(float speed){
+        mSpeed = speed;
+        return autoScrollingLayout;
+    }
+
+    public AutoScrollingLayout setBackgroundAlpha(float alpha){
+        mAlpha =alpha;
+        emptyView.setAlpha(mAlpha);
+        return autoScrollingLayout;
+    }
+
+
     public class AutoScrollingAdapter extends RecyclerView.Adapter<AutoScrollingAdapter.MyViewHolder> {
 
         private final OnPositionCalled callback;
         private ArrayList<Drawable> imgList;
         private ArrayList<String> data;
 
-//        public void setData(ArrayList<String> data) {
-//            this.data = data;
-//            notifyItemInserted(data.size()-1);
-//        }
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
             public ImageView img;
