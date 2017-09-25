@@ -21,7 +21,7 @@ allprojects {
 	}
 
 	dependencies {
-	        compile 'com.github.sgaikar1:AutoScrollingLayout:1.0.0'
+	        compile 'com.github.sgaikar1:AutoScrollingLayout:2.0.0'
 	}
 
 ```
