@@ -20,9 +20,10 @@ allprojects {
 		}
 	}
 
-dependencies {
-    compile 'com.github.sgaikar1:ValidationUtilsLibrary:1.0.2'
-}
+	dependencies {
+	        compile 'com.github.sgaikar1:AutoScrollingLayout:1.0.0'
+	}
+
 ```
 
 ### Usage
